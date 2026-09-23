@@ -1,8 +1,18 @@
 import { HomePage } from "./pages/HomePage";
+import {CheckoutPage} from "./pages/CheckoutPage"
+import { Route, Routes } from "react-router";
 import "./App.css";
 
 function App() {
-  return <HomePage />;
+  return (
+    <Routes>
+      {/* {<Route path="/" element={<HomePage />} />} */}
+      <Route index element={<HomePage />} />
+      {/* ↑ both top codes do same ↑ */}
+
+      <Route path="checkout" element={<CheckoutPage />} />
+    </Routes>
+  );
 }
 
 export default App;
