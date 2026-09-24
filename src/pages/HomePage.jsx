@@ -1,25 +1,36 @@
 import { Header } from "../componenet/Header";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import "./HomePage.css";
 
 export function HomePage() {
   const [products, setProducts] = useState([]);
+  const [carts, setCarts] = useState([]);
 
   useEffect(() => {
     async function getProducts() {
-      const response = await fetch("http://localhost:3000/api/products");
-      const data = await response.json();
+      const response = await axios.get("http://localhost:3000/api/products");
 
-      setProducts(data);
+      setProducts(response.data);
     }
     getProducts();
   }, []);
+
+  useEffect(() => {
+    async function getCarts() {
+      const response = await axios.get("http://localhost:3000/api/cart-items");
+      setCarts(response.data);
+    }
+    getCarts();
+  }, []);
+
+  console.log(carts);
 
   return (
     <>
       <title>Ecommerce Project</title>
 
-      <Header />
+      <Header cart={carts} />
 
       <div className="home-page">
         <div className="products-grid">
