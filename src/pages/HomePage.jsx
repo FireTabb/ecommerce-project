@@ -1,9 +1,20 @@
 import { Header } from "../componenet/Header";
-import { products } from "../../starting-code/data/products";
+import { useState, useEffect } from "react";
 import "./HomePage.css";
-console.log(products);
 
 export function HomePage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function getProducts() {
+      const response = await fetch("http://localhost:3000/api/products");
+      const data = await response.json();
+
+      setProducts(data);
+    }
+    getProducts();
+  }, []);
+
   return (
     <>
       <title>Ecommerce Project</title>
