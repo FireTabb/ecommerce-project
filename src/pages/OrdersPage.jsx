@@ -1,12 +1,12 @@
 import { Header } from "../componenet/Header";
 import "./OrdersPage.css";
 
-export function OrdersPage() {
+export function OrdersPage({ carts }) {
   return (
     <>
       <title>Orders</title>
 
-      <Header />
+      <Header carts={carts} />
 
       <div className="orders-page">
         <div className="page-title">Your Orders</div>

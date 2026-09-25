@@ -1,12 +1,12 @@
 import { Header } from "../componenet/Header";
 import "./TrackingPage.css";
 
-export function TrackingPage() {
+export function TrackingPage({ carts }) {
   return (
     <>
       <title>Traking</title>
 
-      <Header />
+      <Header carts={carts} />
 
       <div className="tracking-page">
         <div className="order-tracking">

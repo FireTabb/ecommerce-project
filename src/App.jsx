@@ -25,8 +25,8 @@ function App() {
       {/* ↑ both top codes do same ↑ */}
 
       <Route path="checkout" element={<CheckoutPage carts={carts} />} />
-      <Route path="orders" element={<OrdersPage />} />
-      <Route path="tracking" element={<TrackingPage />} />
+      <Route path="orders" element={<OrdersPage carts={carts} />} />
+      <Route path="tracking" element={<TrackingPage carts={carts} />} />
     </Routes>
   );
 }
