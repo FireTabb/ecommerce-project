@@ -1,4 +1,4 @@
-import { Header } from "../componenet/Header";
+import { Header } from "../../component/Header";
 import "./TrackingPage.css";
 
 export function TrackingPage({ carts }) {
