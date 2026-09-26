@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Header } from "../../componenet/Header";
+import { Header } from "../../component/Header";
 import { useState, useEffect } from "react";
 import { OrdersGrid } from "./OrdersGrid";
 import "./OrdersPage.css";

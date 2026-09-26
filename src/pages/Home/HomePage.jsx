@@ -1,10 +1,10 @@
-import { Header } from "../../componenet/Header";
+import { Header } from "../../component/Header";
 import { useState, useEffect } from "react";
 import { ProductsGrid } from "./ProductsGrid";
 import axios from "axios";
 import "./HomePage.css";
 
-export function HomePage({ carts }) {
+export function HomePage({ carts, getCarts }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function HomePage({ carts }) {
       <Header carts={carts} />
 
       <div className="home-page">
-        <ProductsGrid products={products} />
+        <ProductsGrid products={products} getCarts={getCarts} />
       </div>
     </>
   );
