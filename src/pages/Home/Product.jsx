@@ -11,7 +11,7 @@ export function Product({ product, getCarts }) {
       quantity: quantity,
     });
 
-    getCarts();
+    await getCarts();
   };
 
   const getQuantity = (event) => {
